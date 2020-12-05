@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
-import { StateProvider } from './StateProvider';
-import reducer, {initialState} from "./reducer"
+import { StateProvider } from './contextAPI/StateProvider';
+import reducer, {initialState} from "./contextAPI/reducer"
 ReactDOM.render(
   <BrowserRouter>
     <StateProvider initialState={initialState} reducer={reducer}>
