@@ -13,14 +13,15 @@ function Checkout() {
         <div className="checkout">
             <div className="checkout__left">
                 <img className="checkout__ad" 
-                    src="https://m.media-amazon.com/images/S/sonata-images-prod/US_HOL20_Acquisition_Evergreen/816d73ff-05e2-4a1f-a028-3b4a953e2d16._UR3000,600_SX1500_FMjpg_.jpg" 
+                    src="https://images-na.ssl-images-amazon.com/images/G/01/gift-certificates/consumer/2020/Holiday/GCLPBanners/holi_GCLP_3rd_EN_1024x90_20200918.jpg" 
                     alt="banner ad"
                 />
                 <div>
                     <h2 className="checkout__title">Your Shopping Basket</h2>
                         {basket.map(basketItem=>(
-                            <CheckoutProduct  
-                            key={basketItem.id}
+                            <CheckoutProduct
+                            key={basketItem.id}  
+                            id={basketItem.id}
                             title={basketItem.title}
                             image={basketItem.image}
                             price={basketItem.price}

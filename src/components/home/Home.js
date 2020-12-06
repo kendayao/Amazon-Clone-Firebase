@@ -45,7 +45,7 @@ function Home() {
             rating={4}
           />
           <Product
-            id={1}
+            id={4}
             title="The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation"
             price={19.99}
             image={
