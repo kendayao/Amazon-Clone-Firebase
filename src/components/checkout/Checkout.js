@@ -27,7 +27,7 @@ function Checkout() {
                                 image={basketItem.image}
                                 price={basketItem.price}
                                 rating={basketItem.rating}
-                                />))}:
+                                />))}
                     </div>:   
                     <div className="checkout__empty">
                         <h1 className='checkout__emptyTitle'>Your Shopping Cart is empty.</h1>

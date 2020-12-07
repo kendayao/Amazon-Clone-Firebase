@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Checkout from "./components/checkout/Checkout";
+import Payment from './components/payment/Payment';
 import Login from "./components/login/Login"
 import "./App.css";
 import { Route, Switch, Redirect} from 'react-router-dom';
@@ -34,17 +35,23 @@ function App() {
 
   return (
     <div className="app">
-        <Route exact path="/">
-          <Header />
-          <Home /> 
-        </Route>
-        <Route exact path="/checkout">
+      <Switch>
+        <Route path="/checkout">
           <Header />
           <Checkout/>  
         </Route>
-        <Route exact path="/login">
+        <Route path="/login">
           <Login/>  
         </Route>
+        <Route path="/payment">
+          <Header />
+          <Payment />
+        </Route>
+        <Route path="/">
+          <Header />
+          <Home /> 
+        </Route>
+      </Switch>
     </div>
   );
 }
