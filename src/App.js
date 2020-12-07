@@ -1,6 +1,7 @@
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Checkout from "./components/checkout/Checkout";
+import LoginPage from "./components/login/Login"
 import "./App.css";
 import { Route, Switch, Redirect} from 'react-router-dom';
 import "react-router-dom";
@@ -8,9 +9,17 @@ import "react-router-dom";
 function App() {
   return (
     <div className="app">
-        <Header />  
-        <Route exact path="/" component={Home} />
-        <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/">
+          <Header />
+          <Home /> 
+        </Route>
+        <Route exact path="/checkout">
+          <Header />
+          <Checkout/>  
+        </Route>
+        <Route exact path="/login">
+          <LoginPage/>  
+        </Route>
     </div>
   );
 }
