@@ -7,11 +7,12 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from '../../contextAPI/reducer';
 import axios from '../../utils/axios'
+import {db} from '../../firebase/firebase'
 
 function Payment() {
     const[{basket, user}, dispatch]=useStateValue();
     const history=useHistory();
-
+    
     const stripe=useStripe();
     const elements=useElements();
     const[succeeded, setSucceeded]=useState(false);
@@ -27,14 +28,14 @@ function Payment() {
         const response=await axios({
             method: 'post',
             //stripe expects tota in a currency subunit
-            url: `/payments/create?total=${getBasketTotal(basket)*100}`
+            url: `/payments/create?total=${getBasketTotal(basket).toFixed(2)*100}`
         });
         setClientSecret(response.data.clientSecret)
     }
     getClientSecret();
     },[basket])
-
-
+    console.log(getBasketTotal(basket))
+    console.log('THe secret is -->', clientSecret)
     const handleChange=event=>{
         // listen for changes in the card details and display any errors as the customer types card details
         setDisabled(event.empty);
@@ -50,10 +51,21 @@ function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(({paymentIntent})=>{
+
             //paymentIntent = payment confirmation
+
+            db.collection('users').doc(user?.uid).collection('orders').doc(paymentIntent.id).set({
+                basket: basket,
+                amount: paymentIntent.amount,
+                created: paymentIntent.created
+            })
             setSucceeded(true);
             setError(null);
             setProcessing(false)
+
+            dispatch({
+                type:'EMPTY_BASKET'
+            })
 
             // history replace because we dont want users to go back to payment page, so we dont use history.push
             history.replace('/orders')

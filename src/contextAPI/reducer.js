@@ -5,7 +5,8 @@ export const initialState = {
 
 //Selector
 export const getBasketTotal=(basket)=>(
-    basket?.reduce((accumalator, basketItem)=>accumalator+basketItem.price,0)
+    basket.reduce((accumalator, basketItem)=>
+    accumalator+basketItem.price,0.00)
 )
 
 
@@ -16,6 +17,11 @@ const reducer = (state, action)=>{
                 ...state,
                 basket: [...state.basket, action.item],
             };
+        case 'EMPTY_BASKET':
+            return{
+                ...state,
+                basket:[]
+            }
         case 'REMOVE_FROM_BASKET':
             const index=state.basket.findIndex((basketItem)=>basketItem.id===action.id)
             let newBasket=[...state.basket];

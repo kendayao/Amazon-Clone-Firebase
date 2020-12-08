@@ -4,6 +4,7 @@ import Home from "./components/home/Home";
 import Checkout from "./components/checkout/Checkout";
 import Payment from './components/payment/Payment';
 import Login from "./components/login/Login"
+import Orders from "./components/orders-page/Orders"
 import "./App.css";
 import { Route, Switch} from 'react-router-dom';
 import "react-router-dom";
@@ -19,6 +20,7 @@ function App() {
 
   useEffect(()=>{
     auth.onAuthStateChanged(authUser=>{
+      console.log(authUser)
       if(authUser){
         dispatch({
           type:'SET_USER',
@@ -38,6 +40,10 @@ function App() {
   return (
     <div className="app">
       <Switch>
+      <Route path="/orders">
+          <Header />
+          <Orders/> 
+        </Route>
         <Route path="/checkout">
           <Header />
           <Checkout/>  
