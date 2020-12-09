@@ -33,3 +33,22 @@
 .footer__section:last-child p{
     margin-top: 8px;
 }
+
+@media (max-width: 800px){
+    .footer{
+        padding: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .footer__sectionContent>h4{
+        font-size: 10px;
+    }
+
+    .footer__sectionContent>p{
+        font-size: 8px;
+    }
+
+    .footer__sectionLink{
+        font-size: 8px;
+    }
+}

@@ -31,9 +31,10 @@ function Product({ id, title, image, price, rating }) {
         <p> {" ⭐".repeat(rating)}</p>
         </div>
       </div>
-      <img src={image} alt="product" />
+       <img src={image} alt="product" />
       <button onClick={addToBasket}>Add to Basket</button>
     </div>
+    
   );
 }
 
