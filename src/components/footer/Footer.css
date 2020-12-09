@@ -1,0 +1,35 @@
+.footer{
+    padding: 50px;
+    background-color: #232F3E;
+    margin-top: 10px;
+}
+
+.footer__section{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer__sectionContent>h4,
+.footer__sectionContent>p {
+    margin-bottom: 8px;
+}
+
+.footer__sectionContent>h4{
+    color: #fff;
+}
+
+.footer__sectionContent>p{
+    color: #DDD;
+    font-size: 14px;
+}
+
+.footer__sectionLink{
+    text-decoration: none;
+    color: #DDD;
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+
+.footer__section:last-child p{
+    margin-top: 8px;
+}

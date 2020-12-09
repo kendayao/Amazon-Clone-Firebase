@@ -22,13 +22,17 @@ function Orders() {
     },[user])
     return (
         <div className='orders'>
-            <h1>Your Orders</h1>
-            <div className='orders_order'>
-                {orders?.map(order=>(
-                    <OrderItem order={order}/>
-                ))}
-            </div>
-
+            {orders.length>0?(
+            <div>
+                <h1>Your Orders</h1>
+                <div className='orders__order'>
+                    {orders?.map(order=>(
+                        <OrderItem order={order}/>
+                    ))}
+                </div>
+            </div>):
+            <h1>No Recent Orders</h1>
+            }
         </div>
     )
 }

@@ -2,7 +2,9 @@ import React from "react";
 import "./Home.css";
 import Product from "../product/Product";
 
+
 function Home() {
+
 
   // image="https://images-na.ssl-images-amazon.com/images/I/810%2BGNdkzKL._AC_SX450_.jpg"
   return (
@@ -13,7 +15,6 @@ function Home() {
           src="https://images-na.ssl-images-amazon.com/images/G/01/kindle/journeys/YzExNTRjZmUt/YzExNTRjZmUt-YTJjN2Q5MTct-w1500._CB414654619_.jpg"
           alt="banner"
         />
-
         <div className="home__row">
           <Product
             id={1}
