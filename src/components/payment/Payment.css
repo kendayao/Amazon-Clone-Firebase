@@ -51,3 +51,31 @@
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
 }
+
+.payment__details > form> p {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 800px){
+
+   .payment__container>h1{
+    font-size: 20px;
+   }
+
+   .payment__title{
+       font-size: 12px;
+       margin-bottom: 10px;
+   }
+
+   .payment__section{
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       padding: 10px;
+       text-align: center
+   }
+
+}

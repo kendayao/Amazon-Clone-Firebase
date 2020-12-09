@@ -34,8 +34,7 @@ function Payment() {
     }
     getClientSecret();
     },[basket])
-    console.log(getBasketTotal(basket))
-    console.log('THe secret is -->', clientSecret)
+
     const handleChange=event=>{
         // listen for changes in the card details and display any errors as the customer types card details
         setDisabled(event.empty);
@@ -110,6 +109,8 @@ function Payment() {
                     <div className='payment__details'>
                         <form onSubmit={handleSubmit}>
                             <CardElement onChange={handleChange}/>
+                            <p>*Please use the following test credit card for payments*</p>
+                            <p>4242 4242 4242 4242 - Exp:04/24 - CVV: 123 ZIP: 12345</p>
                             <div className='payment__priceContainer'>
                                 <CurrencyFormat 
                                     renderText={(value)=>(
