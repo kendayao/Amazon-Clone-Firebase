@@ -43,6 +43,10 @@
     color: rgb(206, 3, 3);
 }
 
+.checkout__right{
+    margin-left: 5px;
+}
+
 @media (max-width: 800px){
     .checkout{
         display: flex;

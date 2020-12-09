@@ -67,6 +67,26 @@ function Home() {
         <div className="home__row">
         <Product
             id={6}
+            title="COWIN E7 Active Noise Cancelling Headphones Bluetooth Headphones with Microphone Deep Bass Wireless Headphones Over Ear, Comfortable Protein Earpads, 30 Hours Playtime for Travel/Work, Black"
+            price={89.99}
+            image={
+              "https://images-na.ssl-images-amazon.com/images/I/41WzHq0SkRL._AC_.jpg"
+            }
+            rating={5}
+          />
+          <Product
+            id={7}
+            title='All-new Fire HD 8 tablet, 8" HD display, 32 GB, designed for portable entertainment, Black'
+            price={59.99}
+            image={
+            "https://images-na.ssl-images-amazon.com/images/I/61jIs7q6SML._AC_SX522_.jpg"
+            }
+            rating={4}
+          />
+        </div>
+        <div className="home__row">
+        <Product
+            id={8}
             title="SAMSUNG 50-inch Class Crystal UHD TU-8000 Series - 4K UHD HDR Smart TV with Alexa Built-in (UN50TU8000FXZA, 2020 Model)"
             price={499.99}
             image={

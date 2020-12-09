@@ -19,7 +19,7 @@ function CheckoutProduct({id, image, title, price, rating, hideButton}) {
                 <p className="checkoutProduct__price"><small>$</small><strong>{price}</strong></p>
                 <div className="checkoutProduct__rating"><p>{" ⭐".repeat(rating)}</p></div>
                 {!hideButton&&(
-                    <button onClick={removeFromBasket}>Remove from basket</button>
+                    <button onClick={removeFromBasket}>Remove from cart</button>
                 )}
                 
             </div>
